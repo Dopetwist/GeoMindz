@@ -24,12 +24,12 @@ db.connect();
 
 
 
-app.get("/api/countries", async (err, res) => {
+app.get("/api/countries", async (req, res) => {
   try {
     const result = await db.query("SELECT * FROM capitals");
     res.json(result.rows);
   } catch (error) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ error: error.message });
   }
 });
 
