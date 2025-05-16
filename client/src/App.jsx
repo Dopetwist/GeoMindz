@@ -4,9 +4,11 @@ import Input from './components/Input';
 import Button from './components/Button';
 import Question from "./components/Question";
 import Score from "./components/Score";
+import Country from './components/Country';
 import axios from "axios"
 
 function App() {
+  let randomCountry = {};
 
   const [inputText, setInput] = useState("");
   const [count, setCount] = useState(0);
@@ -34,9 +36,15 @@ function App() {
 
 
   function handleClick() {
-    // setCount(count + 1);
+    
+  }
 
-    console.log(capitals);
+  function getCountry() {
+    const random = capitals[Math.floor(Math.random() * capitals.length)];
+
+    randomCountry = random;
+
+    return randomCountry.country;
   }
 
   return (
@@ -49,7 +57,9 @@ function App() {
         <div className="container">
           <Question />
 
-          
+          <Country 
+          countries={getCountry}
+          />
 
           <Input 
             change={handleChange}
