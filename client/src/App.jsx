@@ -8,11 +8,11 @@ import Country from './components/Country';
 import axios from "axios"
 
 function App() {
-  let randomCountry = {};
 
   const [inputText, setInput] = useState("");
   const [count, setCount] = useState(0);
   const [capitals, setCapitals] = useState([]);
+  const [randomCountry, setRandomCountry] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
@@ -28,6 +28,13 @@ function App() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    if (capitals.length > 0) {
+      getCountry();
+    }
+  }, [capitals]);
+
+
   function handleChange(event) {
     const inputValue = event.target.value;
 
@@ -36,15 +43,13 @@ function App() {
 
 
   function handleClick() {
-    
+    console.log(capitals);
   }
 
   function getCountry() {
     const random = capitals[Math.floor(Math.random() * capitals.length)];
 
-    randomCountry = random;
-
-    return randomCountry.country;
+    setRandomCountry(random);
   }
 
   return (
@@ -58,7 +63,7 @@ function App() {
           <Question />
 
           <Country 
-          countries={getCountry}
+          countries={randomCountry}
           />
 
           <Input 
