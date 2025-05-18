@@ -13,6 +13,7 @@ function App() {
   const [count, setCount] = useState(0);
   const [capitals, setCapitals] = useState([]);
   const [randomCountry, setRandomCountry] = useState(null);
+  const [isCorrect, setCorrect] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
@@ -33,6 +34,17 @@ function App() {
       getCountry();
     }
   }, [capitals]);
+
+  // useEffect(() => {
+  //   if (randomCountry.capital.toLowerCase() === inputText.trim().toLowerCase()) {
+  //     setCorrect(true);
+  //   } else {
+  //     setCorrect(false);
+  //   }
+  // }, [isCorrect]);
+
+
+
 
 
   function handleChange(event) {
@@ -82,6 +94,7 @@ function App() {
                 
           <Button 
             click={handleClick}
+            checkCorrect={isCorrect}
           />
         </div>    
         
