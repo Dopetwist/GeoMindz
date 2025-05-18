@@ -20,8 +20,8 @@ function Button(props) {
         onClick={props.click}
         onMouseOver={mouseOver}
         onMouseOut={mouseOut}>
-        Submit
-    </button>;
+        Submit <span> {props.checkCorrect ? "Good" : "Bad"} </span>
+    </button>
 }
 
 export default Button;
