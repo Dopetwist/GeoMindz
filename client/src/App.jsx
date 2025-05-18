@@ -43,7 +43,16 @@ function App() {
 
 
   function handleClick() {
-    console.log(capitals);
+    if (randomCountry.capital.toLowerCase() === inputText.trim().toLowerCase()) {
+        setCount(count + 1);
+        getCountry();
+        setInput("");
+    } else {
+        alert(`Failed: Your Total score is ${count}`);
+        setCount(0);
+        setInput("");
+        getCountry();
+    }
   }
 
   function getCountry() {
