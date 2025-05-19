@@ -13,7 +13,7 @@ function App() {
   const [count, setCount] = useState(0);
   const [capitals, setCapitals] = useState([]);
   const [randomCountry, setRandomCountry] = useState(null);
-  const [isCorrect, setCorrect] = useState(true);
+
 
   useEffect(() => {
     async function fetchData() {
@@ -35,17 +35,6 @@ function App() {
     }
   }, [capitals]);
 
-  // useEffect(() => {
-  //   if (randomCountry.capital.toLowerCase() === inputText.trim().toLowerCase()) {
-  //     setCorrect(true);
-  //   } else {
-  //     setCorrect(false);
-  //   }
-  // }, [isCorrect]);
-
-
-
-
 
   function handleChange(event) {
     const inputValue = event.target.value;
@@ -60,7 +49,7 @@ function App() {
         getCountry();
         setInput("");
     } else {
-        alert(`Failed: Your Total score is ${count}`);
+        alert(`Game Over: Your Total score is ${count}`);
         setCount(0);
         setInput("");
         getCountry();
@@ -94,7 +83,6 @@ function App() {
                 
           <Button 
             click={handleClick}
-            checkCorrect={isCorrect}
           />
         </div>    
         

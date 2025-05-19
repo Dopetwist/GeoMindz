@@ -13,14 +13,13 @@ function Button(props) {
 
     return <button 
         style={{
-            backgroundColor: isMoused ? "black" : "white", 
-            color: isMoused ? "white" : "black", 
+            backgroundColor: isMoused ? "navy" : "blue", 
             cursor: isMoused && "pointer"
         }}
         onClick={props.click}
         onMouseOver={mouseOver}
         onMouseOut={mouseOut}>
-        Submit <span> {props.checkCorrect ? "Good" : "Bad"} </span>
+        Submit
     </button>
 }
 

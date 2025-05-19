@@ -7,7 +7,7 @@
 body {
   width: 100%;
   height: 100vh;
-  background-color: blue;
+  background-image: url(./assets/images/flags.png);
 }
 
 .heading {
@@ -21,6 +21,7 @@ body {
 }
 
 #root {
+  background: rgba(0, 0, 0, 0.4);
   height: 100dvh;
 }
 
@@ -30,7 +31,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: red;
+  background-color: #fff;
+  box-shadow: 0 0 1rem #555;
   border-radius: 0.5rem;
   padding: 1rem 1rem 2rem;
 }
@@ -43,10 +45,21 @@ body {
 }
 
 input {
-  width: 80%;
+  width: 60%;
   font-size: 1rem;
   padding: 0.3rem 2%;
   margin: 1rem 0;
+}
+
+#field {
+  border-radius: 0.3rem;
+  outline-color: blue;
+}
+
+.country {
+  color: navy;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .count {
@@ -55,12 +68,15 @@ input {
 }
 
 .para-text {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
 }
 
 button {
-  font-size: 0.8rem;
-  padding: 0.5rem 1rem;
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 0.7rem;
+  margin-top: 1rem;
   color: #fff;
   border: none;
   outline: none;
