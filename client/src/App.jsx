@@ -62,6 +62,11 @@ function App() {
     setRandomCountry(random);
   }
 
+  function sound() {
+    const audio = new Audio()
+    audio.play();
+  }
+
   return (
     <>
       <div className="content">
