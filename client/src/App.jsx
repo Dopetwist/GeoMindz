@@ -46,10 +46,12 @@ function App() {
   function handleClick() {
     if (randomCountry.capital.toLowerCase() === inputText.trim().toLowerCase()) {
         setCount(count + 1);
+        success();
         getCountry();
         setInput("");
     } else {
         alert(`Game Over: Your Total score is ${count}`);
+        failure();
         setCount(0);
         setInput("");
         getCountry();
@@ -62,8 +64,13 @@ function App() {
     setRandomCountry(random);
   }
 
-  function sound() {
-    const audio = new Audio()
+  function success() {
+    const audio = new Audio("success.mp3");
+    audio.play();
+  }
+
+   function failure() {
+    const audio = new Audio("fail.mp3");
     audio.play();
   }
 
