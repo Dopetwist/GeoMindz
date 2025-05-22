@@ -83,3 +83,20 @@ button {
   border-radius: 0.3rem;
   letter-spacing: 0.1rem;
 }
+
+.restart-con {
+  width: 80%;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.restart-con button {
+  width: 50%;
+  padding: 1rem 2rem;
+  border-radius: 0.7rem;
+}

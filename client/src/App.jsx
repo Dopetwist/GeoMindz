@@ -5,7 +5,8 @@ import Button from './components/Button';
 import Question from "./components/Question";
 import Score from "./components/Score";
 import Country from './components/Country';
-import axios from "axios"
+import Restart from './components/Restart';
+import axios from "axios";
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
   const [count, setCount] = useState(0);
   const [capitals, setCapitals] = useState([]);
   const [randomCountry, setRandomCountry] = useState(null);
+  const [isFailed, setIsFailed] = useState(false);
 
 
   useEffect(() => {
@@ -50,11 +52,9 @@ function App() {
         getCountry();
         setInput("");
     } else {
-        alert(`Game Over: Your Total score is ${count}`);
-        failure();
-        setCount(0);
-        setInput("");
-        getCountry();
+      alert(`Game Over: Your Total score is ${count}`);
+      failure();
+      setIsFailed(true);
     }
   }
 
@@ -72,6 +72,21 @@ function App() {
    function failure() {
     const audio = new Audio("fail.mp3");
     audio.play();
+  }
+
+  function restartQuiz() {
+    setIsFailed(false);
+    setCount(0);
+    setInput("");
+    getCountry();
+  }
+
+  if (isFailed) {
+    return (
+      <Restart 
+        click={restartQuiz}
+      />
+    )
   }
 
   return (
