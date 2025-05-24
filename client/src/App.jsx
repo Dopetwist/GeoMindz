@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import './index.css'
+import Header from './components/Header';
+import Footer from './components/Footer';
 import Input from './components/Input';
 import Button from './components/Button';
 import Question from "./components/Question";
@@ -91,6 +93,8 @@ function App() {
 
   return (
     <>
+      <Header />
+
       <div className="content">
         <Score 
           total={count}
@@ -114,6 +118,8 @@ function App() {
         </div>    
         
       </div>
+
+      <Footer />
     </>
   )
 }
