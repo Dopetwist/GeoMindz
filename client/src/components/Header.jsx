@@ -4,13 +4,10 @@ import HighlightRoundedIcon from '@mui/icons-material/HighlightRounded';
 function Header() {
     return (
         <header>
-            <HighlightRoundedIcon style={{
-                fontSize: "4rem", 
-                marginRight: "0.6rem",
-                color: "white"
-            }} />
+            
+            <img src="logo.jpeg" alt="logo" className="logo" />
             <h1>
-            Quizix
+            GeoMindz
             </h1>
         </header>
     )

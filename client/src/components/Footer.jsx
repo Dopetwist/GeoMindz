@@ -5,7 +5,7 @@ function Footer() {
 
     return (
         <footer>
-            <p>&copy; {currentYear} Quizix || All rights reserved.</p>
+            <p>&copy; {currentYear} GeoMindz || All rights reserved.</p>
         </footer>
     )
 }
