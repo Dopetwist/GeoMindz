@@ -1,15 +1,15 @@
-# GeoMindz
+# GeoMindz 💡
 
 A simple and interactive full stack quiz application built with React and Vite that challenges users to match countries with their capitals. It was built with a focus on a clean, responsive UI and smooth quiz experience.
 
-## Features
+## 🏄🏻‍♂️ Features
 
 * Sound effects for correct and incorrect answers.
 * Score tracking.
 * Restart button upon failure.
 * Responsive design for desktop and mobile devices.
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 **Frontend:** React + Vite, CSS3, HTML5, JavaScript.  
 **Backend:** Node.js, Express.js.  
@@ -17,7 +17,7 @@ A simple and interactive full stack quiz application built with React and Vite t
 **Version Control:** Git and GitHub.
 
 
-## 📦 Getting Started
+## 👍 Getting Started
 
 Follow these steps to run the project locally:
 
@@ -31,9 +31,10 @@ Follow these steps to run the project locally:
 
     Use the command `npm install`
 
-4. **Start the development server:**
+4. **Start the development servers:**
 
-    `npm run dev`
+   * client-side server `npm run dev`
+   * backend server `nodemon index.js`
 
 5. Open http://localhost:5173 to view the app.
 
@@ -52,5 +53,4 @@ Have ideas or improvements? Contributions are welcome! Please open an issue firs
 
 
 
-**Happy Quizzing!**
-
+**Happy Quizzing 🎉**
