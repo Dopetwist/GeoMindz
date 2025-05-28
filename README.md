@@ -5,6 +5,7 @@ A simple and interactive full stack quiz application built with React and Vite t
 ## 🏄🏻‍♂️ Features
 
 * Sound effects for correct and incorrect answers.
+* Dynamic display of random countries from a database.
 * Score tracking.
 * Restart button upon failure.
 * Responsive design for desktop and mobile devices.
