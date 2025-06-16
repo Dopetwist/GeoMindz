@@ -1,6 +1,8 @@
 # GeoMindz 💡
 
-A simple and interactive full stack quiz application built with React and Vite that challenges users to match countries with their capitals. It was built with a focus on a clean, responsive UI and smooth quiz experience.
+A simple and interactive full stack quiz application built with React and Vite that challenges users to match countries with their capitals.   
+
+It was built with a focus on a clean, responsive UI and smooth quiz experience.
 
 ## 🏄🏻‍♂️ Features
 
