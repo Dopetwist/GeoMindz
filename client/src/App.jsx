@@ -19,6 +19,8 @@ function App() {
   const [isFailed, setIsFailed] = useState(false);
 
 
+  // Connect backend to app
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -47,6 +49,7 @@ function App() {
   }
 
 
+  // Detect correct or incorrect answer on click
   function handleClick() {
     if (randomCountry.capital.toLowerCase() === inputText.trim().toLowerCase()) {
         setCount(count + 1);
@@ -60,22 +63,26 @@ function App() {
     }
   }
 
+  // Get a new random country
   function getCountry() {
     const random = capitals[Math.floor(Math.random() * capitals.length)];
 
     setRandomCountry(random);
   }
 
+  // Play success sound
   function success() {
     const audio = new Audio("success.mp3");
     audio.play();
   }
 
+  // Play failure sound
    function failure() {
     const audio = new Audio("fail.mp3");
     audio.play();
   }
 
+  // Restart Quiz
   function restartQuiz() {
     setIsFailed(false);
     setCount(0);
@@ -83,6 +90,7 @@ function App() {
     getCountry();
   }
 
+  // Display restart button
   if (isFailed) {
     return (
       <Restart 
