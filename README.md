@@ -30,16 +30,24 @@ Follow these steps to run the project locally:
    git clone https://github.com/Dopetwist/GeoMindz.git
    cd GeoMindz
 
-3. **Install Dependencies:**
+2. **Install Dependencies:**
 
     Use the command `npm install`
 
-4. **Start the development servers:**
+3. **Start the development servers:**
+   
+   Frontend server:
+   * Change directory to `client`
+   * Use `npm install` to install all client-side dependencies
+   * Run `npm run dev`
 
-   * client-side server `npm run dev`
-   * backend server `nodemon index.js`
+   Backend server:
+   * Open a new terminal.
+   * Change directory to `server`
+   * Use `npm install` to install all dependencies
+   * Start the server on the terminal with `nodemon index.js`
 
-5. Open http://localhost:5173 to view the app.
+4. Open http://localhost:5173 to view the app.
 
 
 ## 🔮 Future Improvements
