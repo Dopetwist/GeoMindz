@@ -59,7 +59,7 @@ Follow these steps to run the project locally:
 
 ## 🤝 Contributing
 
-Have ideas or improvements? Contributions are welcome! Please open an issue first to discuss your idea, then submit a pull request.
+Have ideas or improvements? Collaborations are welcome! Please open an issue first to discuss your idea, then submit a pull request.
 
 
 
