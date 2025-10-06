@@ -9,6 +9,7 @@ import Score from "./components/Score";
 import Country from './components/Country';
 import Restart from './components/Restart';
 import axios from "axios";
+import Timer from './components/Timer';
 
 function App() {
 
@@ -101,7 +102,8 @@ function App() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
+      <Timer />
 
       <div className="content">
         <Score 

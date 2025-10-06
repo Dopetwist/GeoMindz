@@ -1,5 +1,3 @@
-import React from "react";
-import HighlightRoundedIcon from '@mui/icons-material/HighlightRounded';
 
 function Header() {
     return (
