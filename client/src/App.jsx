@@ -52,7 +52,9 @@ function App() {
 
   // Detect correct or incorrect answer on click
   function handleClick() {
-    if (randomCountry.capital.toLowerCase() === inputText.trim().toLowerCase()) {
+    if (!inputText) {
+        alert("Please enter an existing capital.");
+    } else if (randomCountry.capital.toLowerCase() === inputText.trim().toLowerCase()) {
         setCount(count + 1);
         success();
         getCountry();
@@ -102,8 +104,8 @@ function App() {
 
   return (
     <>
-      {/* <Header /> */}
-      <Timer />
+      <Header />
+      {/* <Timer /> */}
 
       <div className="content">
         <Score 

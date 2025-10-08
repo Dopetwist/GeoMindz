@@ -19,7 +19,7 @@ function Timer() {
     //     setCount(count - 1);
     // }
 
-    setInterval(decrease, 1000);
+    // setInterval(decrease, 1000);
 
     return (
         <div>
