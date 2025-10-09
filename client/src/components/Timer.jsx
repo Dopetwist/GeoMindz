@@ -2,24 +2,30 @@ import { useEffect, useState } from "react";
 
 function Timer() {
 
-    // const now = new Date().toLocaleTimeString();
-
+    const [ countDownStarted, setCountDown ] = useState(true);
     const [ count, setCount ] = useState(20);
 
     useEffect(() => {
-        const decrease = () => {
-            setCount(count - 1);
-        }
 
-        decrease();
-    }, [])
+        const countDownInterval = setInterval(() => {
 
-    // function decrease() {
-    //     // const currentTime = new Date().toLocaleTimeString();
-    //     setCount(count - 1);
-    // }
+            if (countDownStarted) {
+                function remainingTime() {
+                    setCount(count - 1);
+                }
 
-    // setInterval(decrease, 1000);
+                remainingTime();
+
+                if (count <= 0) {
+                    clearInterval(countDownInterval);
+                    alert("Time Up!");
+                }
+        
+            }
+        }, 1000);
+
+        return () => clearInterval(countDownInterval);
+    }, [count])
 
     return (
         <div>

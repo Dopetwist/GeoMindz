@@ -104,8 +104,8 @@ function App() {
 
   return (
     <>
-      <Header />
-      {/* <Timer /> */}
+      {/* <Header /> */}
+      <Timer />
 
       <div className="content">
         <Score 
