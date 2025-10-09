@@ -9,7 +9,7 @@ import Score from "./components/Score";
 import Country from './components/Country';
 import Restart from './components/Restart';
 import axios from "axios";
-import Timer from './components/Timer';
+
 
 function App() {
 
@@ -18,6 +18,8 @@ function App() {
   const [capitals, setCapitals] = useState([]);
   const [randomCountry, setRandomCountry] = useState(null);
   const [isFailed, setIsFailed] = useState(false);
+  const [ countDownStarted, setCountDown ] = useState(true);
+  const [ timerCount, setTimerCount ] = useState(20);
 
 
   // Connect backend to app
@@ -42,6 +44,32 @@ function App() {
     }
   }, [capitals]);
 
+  useEffect(() => {
+
+      const countDownInterval = setInterval(() => {
+
+        if (countDownStarted) {
+            function remainingTime() {
+              setTimerCount(timerCount - 1);
+            }
+
+            remainingTime();
+
+            if (timerCount <= 0) {
+              clearInterval(countDownInterval);
+              if (inputText === "") {
+                alert("Time Up!");
+              }
+              failure();
+              setTimerCount(500); // Delay failure sound from playing until 0
+              setIsFailed(true);
+            }
+        
+        }
+      }, 1000);
+
+      return () => clearInterval(countDownInterval);
+    }, [timerCount]);
 
   function handleChange(event) {
     const inputValue = event.target.value;
@@ -59,6 +87,7 @@ function App() {
         success();
         getCountry();
         setInput("");
+        setTimerCount(20);
     } else {
       alert(`Game Over: Your Total score is ${count}`);
       failure();
@@ -91,6 +120,7 @@ function App() {
     setCount(0);
     setInput("");
     getCountry();
+    setTimerCount(20);
   }
 
   // Display restart button
@@ -105,12 +135,19 @@ function App() {
   return (
     <>
       <Header />
-      {/* <Timer /> */}
 
       <div className="content">
-        <Score 
+        <div className="inner-con">
+          <Score 
           total={count}
-        />
+          />
+
+          <div className='timer'>
+            <p>
+              { timerCount }
+            </p>
+          </div>
+        </div>
 
         <div className="container">
           <Question />
