@@ -18,6 +18,8 @@ function App() {
   const [capitals, setCapitals] = useState([]);
   const [randomCountry, setRandomCountry] = useState(null);
   const [isFailed, setIsFailed] = useState(false);
+  const [ countDownStarted, setCountDown ] = useState(true);
+  const [ timerCount, setTimerCount ] = useState(20);
 
 
   // Connect backend to app
@@ -42,6 +44,30 @@ function App() {
     }
   }, [capitals]);
 
+  useEffect(() => {
+
+      const countDownInterval = setInterval(() => {
+
+        if (countDownStarted) {
+            function remainingTime() {
+              setTimerCount(timerCount - 1);
+            }
+
+            remainingTime();
+
+            if (timerCount <= 0) {
+              clearInterval(countDownInterval);
+              failure();
+              alert("Time Up!");
+              setCount(0);
+              getCountry();
+            }
+        
+        }
+      }, 1000);
+
+      return () => clearInterval(countDownInterval);
+    }, [timerCount])
 
   function handleChange(event) {
     const inputValue = event.target.value;
@@ -105,7 +131,7 @@ function App() {
   return (
     <>
       {/* <Header /> */}
-      <Timer />
+      { timerCount }
 
       <div className="content">
         <Score 
