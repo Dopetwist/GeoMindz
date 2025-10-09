@@ -69,7 +69,7 @@ function App() {
       }, 1000);
 
       return () => clearInterval(countDownInterval);
-    }, [timerCount])
+    }, [timerCount]);
 
   function handleChange(event) {
     const inputValue = event.target.value;
@@ -134,13 +134,20 @@ function App() {
 
   return (
     <>
-      {/* <Header /> */}
-      { timerCount }
+      <Header />
 
       <div className="content">
-        <Score 
+        <div className="inner-con">
+          <Score 
           total={count}
-        />
+          />
+
+          <div className='timer'>
+            <p>
+              { timerCount }
+            </p>
+          </div>
+        </div>
 
         <div className="container">
           <Question />
