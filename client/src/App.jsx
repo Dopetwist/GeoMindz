@@ -9,7 +9,7 @@ import Score from "./components/Score";
 import Country from './components/Country';
 import Restart from './components/Restart';
 import axios from "axios";
-import Timer from './components/Timer';
+
 
 function App() {
 
@@ -57,10 +57,12 @@ function App() {
 
             if (timerCount <= 0) {
               clearInterval(countDownInterval);
+              if (inputText === "") {
+                alert("Time Up!");
+              }
               failure();
-              alert("Time Up!");
-              setCount(0);
-              getCountry();
+              setTimerCount(500); // Delay failure sound from playing until 0
+              setIsFailed(true);
             }
         
         }
@@ -85,6 +87,7 @@ function App() {
         success();
         getCountry();
         setInput("");
+        setTimerCount(20);
     } else {
       alert(`Game Over: Your Total score is ${count}`);
       failure();
@@ -117,6 +120,7 @@ function App() {
     setCount(0);
     setInput("");
     getCountry();
+    setTimerCount(20);
   }
 
   // Display restart button
