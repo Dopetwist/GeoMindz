@@ -7,6 +7,7 @@ It was built with a focus on a clean, responsive UI and smooth quiz experience.
 ## 🏄🏻‍♂️ Features
 
 * Sound effects for correct and incorrect answers.
+* Timer for each question.
 * Dynamic display of random countries from a database.
 * Score tracking.
 * Restart button upon failure.
@@ -52,7 +53,6 @@ Follow these steps to run the project locally:
 
 ## 🔮 Future Improvements
 
-  * Timer for each question.
   * High score saving with localStorage or a database.
   * Add more questions or categories (e.g. flags, currencies).
   * Instant Feedback section.
