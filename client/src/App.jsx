@@ -38,6 +38,7 @@ function App() {
     fetchData();
   }, []);
 
+  // Get random country
   useEffect(() => {
     if (capitals.length > 0) {
       getCountry();
@@ -46,6 +47,7 @@ function App() {
 
   useEffect(() => {
 
+      // Timer Logic
       const countDownInterval = setInterval(() => {
 
         if (countDownStarted) {
