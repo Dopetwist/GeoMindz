@@ -26,6 +26,10 @@ function Restart(props) {
             onMouseOut={mousedOut}
             >Restart Quiz
             </button>
+
+            <div className="correct-ans">
+                <h3> The Correct answer is .... </h3>
+            </div>
         </div>
     )
 }
