@@ -91,8 +91,8 @@ function App() {
         setInput("");
         setTimerCount(20);
     } else {
-      alert(`Game Over: Your Total score is ${count}`);
       failure();
+      alert(`Game Over: Your Total score is ${count}`);
       setIsFailed(true);
     }
   }
@@ -130,6 +130,7 @@ function App() {
     return (
       <Restart 
         click={restartQuiz}
+        displayedCountry={randomCountry}
       />
     )
   }

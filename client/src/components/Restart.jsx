@@ -2,6 +2,8 @@ import { useState } from "react";
 
 function Restart(props) {
 
+    const { click, displayedCountry } = props;
+
     const [isMoused, setIsMoused] = useState(false);
 
     function mousedOver() {
@@ -16,7 +18,7 @@ function Restart(props) {
     return (
         <div className="restart-con">
             <button 
-            onClick={props.click}
+            onClick={click}
             style={{
                 backgroundColor: isMoused ? "darkred" : "red",
                 color: "white",
@@ -28,7 +30,9 @@ function Restart(props) {
             </button>
 
             <div className="correct-ans">
-                <h3> The Correct answer is .... </h3>
+                <div className="ans-con">
+                    <h3> The Correct answer is {displayedCountry ? displayedCountry.capital : "...."} </h3>
+                </div>
             </div>
         </div>
     )
