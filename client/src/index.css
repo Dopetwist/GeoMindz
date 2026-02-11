@@ -162,6 +162,16 @@ button {
   border-radius: 0.5rem;
 }
 
+.ans-con h3 {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-size: 1rem;
+}
+
+#answer {
+  color: #008000;
+}
+
 footer {
   width: 100%;
   position: absolute;
@@ -209,6 +219,10 @@ footer p {
   .country {
     font-size: 2rem;
   }
+
+  .ans-con {
+    padding: 1rem;
+}
 
   .para-text {
     font-size: 1rem;

@@ -31,7 +31,7 @@ function Restart(props) {
 
             <div className="correct-ans">
                 <div className="ans-con">
-                    <h3> The Correct answer is {displayedCountry ? displayedCountry.capital : "...."} </h3>
+                    <h3> The Correct answer is <span id="answer"> {displayedCountry ? displayedCountry.capital : "...."} </span> </h3>
                 </div>
             </div>
         </div>
