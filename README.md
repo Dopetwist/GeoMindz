@@ -12,6 +12,7 @@ It was built with a focus on a clean, responsive UI and smooth quiz experience.
 * Score tracking.
 * Restart button upon failure.
 * Responsive design for desktop and mobile devices.
+* Correct answer display upon failure.
 
 ## 🛠️ Tech Stack
 
