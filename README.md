@@ -57,6 +57,7 @@ Follow these steps to run the project locally:
   * High score saving with localStorage or a database.
   * Add more questions or categories (e.g. flags, currencies).
   * Instant Feedback section.
+  * "Play and Earn" features.
 
 ## 🤝 Contributing
 
