@@ -54,8 +54,7 @@ Follow these steps to run the project locally:
 
 ## 🔮 Future Improvements
 
-  * High score saving with localStorage or a database.
-  * Add more questions or categories (e.g. flags, currencies).
+  * High score saving with localStorage or database.
   * Instant Feedback section.
   * "Play and Earn" features.
 
