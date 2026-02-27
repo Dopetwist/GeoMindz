@@ -4,10 +4,12 @@ import Zoom from '@mui/material/Zoom';
 function Button(props) {
     const [isMoused, setMoused] = useState(false);
 
+    // Function for button hover
     function mouseOver() {
        setMoused(true);
     }
 
+    // Function for button non-hover
     function mouseOut() {
        setMoused(false);
     }
