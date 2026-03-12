@@ -2,15 +2,26 @@ import express from "express";
 import cors from "cors";
 import env from "dotenv";
 import pg from "pg";
+/* import pkg from "pg"; */
 
 
 const app = express();
 const port = 5000;
 
+/* const { Pool } = pkg; */
+
 app.use(cors());
 app.use(express.json());
 
 env.config();
+
+// Database Connection
+/* const db = new Pool({
+  connectionString: process.env.DATABASE_URL || "postgres://postgres:J20161978583A...@localhost:5432/paperback",
+  ssl: process.env.NODE_ENV === "production"
+    ? { rejectUnauthorized: false }
+    : false
+}); */
 
 const db = new pg.Client({
   user: process.env.DB_USER,
