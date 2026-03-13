@@ -3,6 +3,7 @@ import cors from "cors";
 import env from "dotenv";
 /* import pg from "pg"; */
 import pkg from "pg";
+import path from "path";
 
 
 const app = express();
@@ -12,6 +13,7 @@ const { Pool } = pkg;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static("client/dist")); // server serves react for deployment
 
 env.config();
 
@@ -34,7 +36,6 @@ const db = new Pool({
 db.connect(); */
 
 
-
 app.get("/api/countries", async (req, res) => {
   try {
     const result = await db.query("SELECT country, capital FROM public.capitals ORDER BY id ASC");
@@ -44,6 +45,10 @@ app.get("/api/countries", async (req, res) => {
   }
 });
 
+// Catch-all route so React routing works
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve("client/dist/index.html"));
+});
 
 app.listen(port, () => {
     console.log(`Backend running on http://localhost:${port}`);
