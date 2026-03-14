@@ -46,7 +46,7 @@ app.get("/api/countries", async (req, res) => {
 });
 
 // Catch-all route so React routing works
-app.get("(.*)", (req, res) => {
+app.get("/*splat", (req, res) => {
   res.sendFile(path.resolve("client/dist/index.html"));
 });
 
