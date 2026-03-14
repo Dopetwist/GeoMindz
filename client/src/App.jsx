@@ -27,7 +27,8 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await axios.get("http://localhost:5000/api/countries");
+        const res = await axios.get("/api/countries"); // During development, use the below URL to fetch data from the backend
+                                                      // "http://localhost:5000/api/countries"
 
         setCapitals(res.data);
       } catch (error) {
