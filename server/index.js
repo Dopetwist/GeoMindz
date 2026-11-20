@@ -22,13 +22,49 @@ const db = new Pool({
   ssl: { rejectUnauthorized: false }
 });
 
-
+// Get countries data from database
 app.get("/api/countries", async (req, res) => {
   try {
-    const result = await db.query("SELECT * FROM world_app.capitals");
+    const result = await db.query("SELECT * FROM capitals");
     res.json(result.rows);
   } catch (error) {
+    console.error("Error fetching countries data:", error.message);
     res.status(500).json({ error: error.message });
+  }
+});
+
+// Health Check Endpoints
+app.get("/api/health", (req, res) => {
+    try {
+        res.status(200).json({ 
+                success: true, 
+                message: "Server is running." 
+            });
+    } catch (error) {
+        console.error("Server health check failed:", error.message);
+        res.status(500).json({ success: false, message: "Server health check failed." });
+    }
+});
+
+app.get("/api/health/db", async (req, res) => {
+  try {
+    const result = await db.query("SELECT NOW() AS server_time");
+
+    res.status(200).json({
+      success: true,
+      serverTime: result.rows[0].server_time,
+    });
+  } catch (error) {
+    console.error("Database health check failed:", {
+      message: error.message,
+      code: error.code,
+      detail: error.detail,
+    });
+
+    res.status(500).json({
+      success: false,
+      message: "Database connection failed",
+    });
   }
 });
 
