@@ -13,11 +13,11 @@ import axios from "axios";
 
 function App() {
 
-  const [inputText, setInput] = useState("");
-  const [count, setCount] = useState(0);
-  const [capitals, setCapitals] = useState([]);
-  const [randomCountry, setRandomCountry] = useState(null);
-  const [isFailed, setIsFailed] = useState(false);
+  const [ inputText, setInput ] = useState("");
+  const [ count, setCount ] = useState(0);
+  const [ capitals, setCapitals ] = useState([]);
+  const [ randomCountry, setRandomCountry ] = useState(null);
+  const [ isFailed, setIsFailed ] = useState(false);
   const [ countDownStarted, setCountDown ] = useState(true);
   const [ timerCount, setTimerCount ] = useState(20);
 
@@ -25,14 +25,14 @@ function App() {
   // Connect backend to app
 
   useEffect(() => {
-    async function fetchData() {
+    const fetchData = async () => {
       try {
-        const res = await axios.get("/api/countries"); // During development, use the below URL to fetch data from the backend
+        const res = await axios.get("http://localhost:5000/api/countries"); // During development, use the below URL to fetch data from the backend
                                                       // "http://localhost:5000/api/countries"
-
+                                                      
         setCapitals(res.data);
       } catch (error) {
-        console.error(error);
+        console.error(error.message);
       }
     }
 
