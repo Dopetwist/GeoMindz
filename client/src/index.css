@@ -25,11 +25,12 @@ body {
 
 #root {
   background: rgba(0, 0, 0, 0.5);
-  height: 100dvh;
+  height: 100vh;
   overflow: hidden;
 }
 
 header {
+  width: fit-content;
   display: flex;
   align-items: center;
   position: relative;
@@ -71,8 +72,9 @@ header h1 {
 input {
   width: 60%;
   font-size: 1rem;
-  padding: 0.3rem 2%;
+  padding: 0.5rem 3%;
   margin: 1rem 0;
+  border: 0.1rem solid #55555542;
 }
 
 #field {
@@ -152,7 +154,6 @@ button {
 }
 
 .correct-ans {
-  background-color: green;
   margin-top: 10rem;
 }
 
@@ -167,6 +168,7 @@ button {
   font-family: "Open Sans", sans-serif;
   font-style: normal;
   font-size: 1rem;
+  text-align: center;
 }
 
 #answer {
@@ -221,16 +223,21 @@ footer p {
     font-size: 2rem;
   }
 
+  .correct-ans {
+    width: 100%;
+  }
+
   .ans-con {
     padding: 1rem;
-}
+    border: 0.1rem solid #55555542;
+  }
 
   .para-text {
     font-size: 1rem;
   }
 
   input {
-    width: 80%;
+    width: 100%;
   }
 
   button {
