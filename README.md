@@ -18,7 +18,7 @@ It was built with a focus on a clean, responsive UI and smooth quiz experience.
 
 **Frontend:** React + Vite, CSS3, HTML5, JavaScript.  
 **Backend:** Node.js, Express.js.  
-**Database:** PostgreSQL.  
+**Database:** PostgreSQL, Supabase  
 **Version Control:** Git and GitHub.
 
 
